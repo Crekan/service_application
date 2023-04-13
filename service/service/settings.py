@@ -39,6 +39,7 @@ INSTALLED_APPS = [
 
     'rest_framework',
     'debug_toolbar',
+    'celery',
 
     'clients.apps.ClientsConfig',
     'services.apps.ServicesConfig',
@@ -157,3 +158,8 @@ LOGGING = {
         }
     },
 }
+
+# CELERY
+
+CELERY_BROKER_URL = 'redis://redis:6379/0'
+CELERY_RESULT_BACKEND = 'redis://redis:6379/0'
